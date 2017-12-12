@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Consult Online
+        </ion-title>
+        <ion-buttons start>
+            <button ion-button (click)="dismiss()">
+                <ion-icon name="md-close" ></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <form #form="ngForm" (ngSubmit)="submit()" validate>
+        <ion-row>
+            <ion-col>
+                <ion-list>
+                    <ion-list radio-group  name="currentpatient" [(ngModel)]="currentpatient">
+                        <ion-list-header>
+                            Are You A current patient of ours?
+                        </ion-list-header>
+                        <ion-item>
+                            <ion-label>Yes</ion-label>
+                            <ion-radio checked="true" value="yes"></ion-radio>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>No</ion-label>
+                            <ion-radio  value="no"></ion-radio>
+                        </ion-item>
+                    </ion-list>
+                    <ion-item>
+                        <ion-input type="text" placeholder="Short title to your problem"  name="title" [(ngModel)]="title" required></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-input type="text" placeholder="Explain your problem in detail" name="detail" [(ngModel)]="detail" required></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <button ion-button type="submit" [disabled]="!form.form.valid">Submit</button>
+                    </ion-item>
+                </ion-list>
+                <p>{{msg}}</p>
+            </ion-col>
+        </ion-row>
+    </form>
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-content padding>
+    <ion-list>
+        <ion-list-header>
+            Book Appointment
+        </ion-list-header>
+        <ion-item>
+            <ion-label>Select Department</ion-label>
+            <ion-select [(ngModel)]="department" (ngModelChange) ="find();">
+                <ion-option *ngFor ="let dep of departments"  value="{{dep}}">{{dep}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Select Doctor</ion-label>
+            <ion-select [(ngModel)] = "doctor" (ngModelChange)="search();">
+                <ion-option *ngFor ="let doc of docs" value="{{doc}}">{{doc}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Choose Date</ion-label>
+            <ion-datetime displayFormat="MMM DD YYYY" min="{{min}}" max="2020-12-31" [(ngModel)]="dt" (ngModelChange)="getDate();"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label>Choose Time Slot</ion-label>
+            <ion-select [(ngModel)]="timing">
+                <ion-option *ngFor ="let tim of timings" value="{{tim}}">{{tim}}</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+    <button ion-button (click)="appointment();">
+        Appointment
+    </button>
+    <p style="color:rgb(67, 190, 67)">{{msg}}</p>
+</ion-content>

@@ -1,0 +1,15 @@
+<ion-content padding>
+    <ion-row>
+        <p>Get answers from doctors to any health problem</p>
+        <button ion-button (click) = "openModal();">Ask Doctor</button>
+    </ion-row>
+    <ion-list>
+        <ion-list-header>Asked Questions</ion-list-header>
+        <ion-note *ngIf="!question?.length>0">No Questions asked by you.</ion-note>
+        <ion-item *ngFor="let que of question;">
+            <h2>{{que.title}}</h2>
+            <p>{{que.detail}}</p>
+            <ion-note item-end>{{que.date}}|{{que.time}}</ion-note>
+        </ion-item>
+    </ion-list>
+</ion-content>

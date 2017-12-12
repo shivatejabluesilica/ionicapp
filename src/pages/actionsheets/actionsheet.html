@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Action Sheet</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="action-sheets-basic-page">
+
+  <h3>Welcome to your first Ionic app!</h3>
+
+  <button ion-button block (click)="openmenu()">
+    Show Action Sheet
+  </button>
+
+  <button ion-button block (click)="showAlert()">
+    Show Alert
+  </button>
+
+  <button ion-button block (click)="showPrompt()">
+    Show Prompt
+  </button>
+  <div class="col-sm-4">
+    <ion-card>
+        <img src="assets/imgs/shiv.jpg" />
+        <ion-card-content>
+            <ion-card-title>
+                Shivateja Samala
+            </ion-card-title>
+            <ion-item>
+                <ion-icon name="musical-notes" item-start style="color: #d03e84"></ion-icon>
+                Albums
+                <ion-badge item-end>9</ion-badge>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="logo-twitter" item-start style="color: #55acee"></ion-icon>
+                Followers
+                <ion-badge item-end>500K</ion-badge>
+            </ion-item>
+        </ion-card-content>
+    </ion-card>
+  </div>
+
+</ion-content>

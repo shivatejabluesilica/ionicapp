@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons start>
+            <button ion-button (click)="dismiss()">
+                <ion-icon name="md-close" ></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>
+            Record of {{record.consultdate}}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+    
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <h2>Issue</h2>
+            <div class="item-note" item-right>
+            {{record.issue}}
+            </div>
+        </ion-item>
+        <ion-item>
+            <h2>Test Recommended</h2>
+            <div class="item-note" item-right>
+            {{record.recommendedtest}}
+            </div>
+        </ion-item>
+        <ion-item>
+            <h2>Medicine</h2>
+            <div class="item-note" item-right>
+            {{record.medicine}}
+            </div>    
+        </ion-item>
+        <ion-item>
+            <h2>Treated By</h2>
+            <div class="item-note"item-right>
+                {{record.treatedby}}
+            </div>
+        </ion-item>
+    </ion-list>
+</ion-content>

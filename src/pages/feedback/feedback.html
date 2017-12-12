@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-row>
+            <ion-thumbnail>
+                <img src="{{profile.src}}" style="width:50px;height:50px;border-radius:50%;" />
+            </ion-thumbnail>
+            <ion-title >Feedback</ion-title>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-row>
+        <p>Send your valuable Feedback/Suggestions</p>
+        <ion-buttons>
+            <button ion-button (click)="openModal();">
+                Feedback
+            </button>
+        </ion-buttons>
+    </ion-row>
+    <ion-list>
+        <ion-list-header>
+            Feedback List
+        </ion-list-header>
+        <ion-item *ngFor="let fb of fbs;">
+            <p>{{fb.feedback}}</p>
+            <ion-note item-end>{{fb.date}}|{{fb.time}}</ion-note>
+        </ion-item>
+    </ion-list>
+</ion-content>

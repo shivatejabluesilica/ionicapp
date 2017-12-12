@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Send your Feedback
+        </ion-title>
+        <ion-buttons start>
+            <button ion-button (click)="dismiss()">
+                <ion-icon name="md-close" ></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <h2>Name</h2>
+            <div class="item-note" item-right>
+                {{profile.name}}
+            </div>
+        </ion-item>
+        <ion-item>
+            <h2>Mobile Number</h2>
+            <div class="item-note" item-right>
+                {{profile.mobileno}}
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-input type="text" placeholder="Suggestions/Feedback"  name="title" [(ngModel)]="fb" required></ion-input>
+        </ion-item>
+    </ion-list>
+    <ion-buttons>
+        <button ion-button (click)="send();">Send</button>
+    </ion-buttons>
+</ion-content>

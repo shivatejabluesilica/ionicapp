@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle *ngIf="!selectedItem">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Out Patient</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-tabs class="tabs-basic">
+      <ion-tab tabTitle="Medical History" [root] = "tab1"></ion-tab>
+      <ion-tab tabTitle="Prescription" [root] = "tab1"></ion-tab>
+      <ion-tab tabTitle="Book Appointment" [root] = "tab1"></ion-tab>
+    </ion-tabs>
+</ion-content>
