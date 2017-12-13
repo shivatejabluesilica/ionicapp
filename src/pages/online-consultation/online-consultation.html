@@ -1,10 +1,10 @@
-<ion-content padding>
+<ion-content>
     <ion-row>
         <p>Get answers from doctors to any health problem</p>
         <button ion-button (click) = "openModal();">Ask Doctor</button>
     </ion-row>
     <ion-list>
-        <ion-list-header>Asked Questions</ion-list-header>
+        <ion-list-header color="header">Asked Questions</ion-list-header>
         <ion-note *ngIf="!question?.length>0">No Questions asked by you.</ion-note>
         <ion-item *ngFor="let que of question;">
             <h2>{{que.title}}</h2>

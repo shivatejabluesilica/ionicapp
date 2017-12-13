@@ -1,6 +1,6 @@
-<ion-content padding>
+<ion-content>
     <ion-list>
-        <ion-list-header>
+        <ion-list-header color="header">
             Book Appointment
         </ion-list-header>
         <ion-item>
@@ -26,8 +26,8 @@
             </ion-select>
         </ion-item>
     </ion-list>
-    <button ion-button (click)="appointment();">
+    <button ion-button block (click)="appointment();">
         Appointment
     </button>
-    <p style="color:rgb(67, 190, 67)">{{msg}}</p>
+    <p style="color:rgb(67, 190, 67);text-align:center;">{{msg}}</p>
 </ion-content>
