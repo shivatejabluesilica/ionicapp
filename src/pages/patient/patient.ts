@@ -3,6 +3,7 @@ import { NavController, AlertController, LoadingController, Loading } from 'ioni
 import { AuthService,User } from '../../providers/auth-service';
 import { HelloIonicPage } from '../hello-ionic/hello-ionic';
 import { PatientHomePage } from '../patient-home/patient-home';
+import { SignupPage } from '../signup/signup';
 
 @Component({
     templateUrl:'patient.html'
@@ -22,7 +23,7 @@ export class PatientPage {
          }
     
         public createAccount() {
-            this.nav.push(HelloIonicPage);
+            this.nav.push(SignupPage);
         }
          
         public login() {

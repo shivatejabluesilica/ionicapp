@@ -11,6 +11,25 @@ export class User {
     this.password = password;
   }
 }
+
+export class signupUser{
+  name:string;
+  email:string;
+  mobile:string;
+  username:string;
+  password:string;
+  repassword:string;
+
+  constructor(name:string,email:string,mobile:string,username: string, password: string,repassword:string) {
+    this.username = username;
+    this.email = email;
+    this.password = password;
+    this.name = name;
+    this.password = password;
+    this.repassword = repassword;
+    this.mobile = mobile;
+  }
+}
  
 @Injectable()
 export class AuthService {

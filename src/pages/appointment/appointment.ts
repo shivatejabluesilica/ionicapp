@@ -6,7 +6,8 @@ import { NavParams } from 'ionic-angular';
     templateUrl:'appointment.html'
 })
 
-export class AppointmentPage{
+export class AppointmentPage {
+
     public doctors:Array<any> = [{"name":"Dr.Raman","department":"Cardialogy","intime":"MON-SAT|09:30AM-01:30PM","src":"assets/doctors/jdoctor.png"},{"name":"Dr.Mano","department":"Family Physician","intime":"MON-SAT|10:30AM-03:30PM","src":"assets/doctors/jdoctor.png"},
     {"name":"Dr.Surya Pawan","department":"Diabetalogy","intime":"MON-SAT|09:00AM-01:00PM","src":"assets/doctors/jdoctor.png"},{"name":"Dr.Kalpana","department":"Pediatrician","intime":"MON-SAT|08:30AM-01:30PM","src":"assets/doctors/ldoctor.jpg"},
     {"name":"Dr.Ramoji","department":"Cardialogy","intime":"MON-SAT|11:30AM-04:30PM","src":"assets/doctors/jdoctor.png"},{"name":"Dr.Umapathi","department":"Cardialogy","intime":"MON-SAT|08:00AM-12:00PM","src":"assets/doctors/jdoctor.png"},

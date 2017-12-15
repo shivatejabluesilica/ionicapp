@@ -13,6 +13,7 @@ import { ConsultantPage } from '../pages/consultant/consultant';
 import { ItemsPage } from '../pages/items/items';
 import { MedicalHistoryPage } from '../pages/medicalhistory/medicalhistory';
 import { PatientPage } from '../pages/patient/patient';
+import { SignupPage } from '../pages/signup/signup';
 import { PatientHomePage } from '../pages/patient-home/patient-home';
 import { MyHomePage } from '../pages/myhome/myhome';
 import { OnlineConsultationPage, ModalContentPage } from '../pages/online-consultation/online-consultation';
@@ -25,6 +26,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { AuthService } from '../providers/auth-service';
+import { AppSettings } from '../providers/app-settings';
+import { LoginService } from '../providers/login-service';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,7 @@ import { AuthService } from '../providers/auth-service';
     ItemsPage,
     MedicalHistoryPage,
     PatientPage,
+    SignupPage,
     PatientHomePage,
     MyHomePage,
     OnlineConsultationPage,
@@ -65,6 +69,7 @@ import { AuthService } from '../providers/auth-service';
     ItemsPage,
     MedicalHistoryPage,
     PatientPage,
+    SignupPage,
     PatientHomePage,
     MyHomePage,
     OnlineConsultationPage,
@@ -79,6 +84,8 @@ import { AuthService } from '../providers/auth-service';
     StatusBar,
     SplashScreen,
     AuthService,
+    AppSettings,
+    LoginService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
