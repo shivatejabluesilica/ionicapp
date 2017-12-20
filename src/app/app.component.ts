@@ -12,6 +12,7 @@ import { FeedbackPage } from '../pages/feedback/feedback';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { DummyPage } from '../pages/dummy/dummy';
 
 
 @Component({
@@ -43,6 +44,7 @@ export class MyApp {
     this.pages = [
       { title: 'Profile', component: ProfilePage },
       { title: 'Feedback', component: FeedbackPage },
+      { title: 'dummy', component: DummyPage},
       { title:'Logout', component: PatientPage }
     ];
     this.events.subscribe('pro',(profile,profileNumber)=>{

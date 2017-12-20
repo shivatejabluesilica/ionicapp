@@ -1,6 +1,8 @@
 var express = require('express');
 var app = express.Router();
 var Log = require('./login-module');
+var Sign = require('./signin-module');
+var shortid = require('shortid');
 
 app.post('/login', function(request, response) {
     var credentials = new Log(request.body);

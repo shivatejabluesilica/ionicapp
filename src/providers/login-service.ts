@@ -20,4 +20,10 @@ export class LoginService{
         .map(response => response.json());
     }
 
+    login(registerCredentials:any){
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.post(this.apiUrl+'signin',JSON.stringify(registerCredentials),{headers:headers}).map(response=>response.json());
+    }
+
 }

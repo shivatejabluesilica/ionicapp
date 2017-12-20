@@ -12,13 +12,13 @@
           <ion-col>
             <ion-list inset>
               <ion-item>
-                <ion-input type="text" placeholder="Full Name" name="name" [(ngModel)]="credentials.name" required></ion-input>
+                <ion-input type="text" placeholder="Full Name" pattern="[a-zA-Z][a-zA-Z ]+" name="name" [(ngModel)]="credentials.name" required></ion-input>
               </ion-item>
               <ion-item>
-                <ion-input type="text" placeholder="Email Id" name="email" [(ngModel)]="credentials.email" required></ion-input>
+                <ion-input type="email" placeholder="Email Id" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="email" [(ngModel)]="credentials.email" required></ion-input>
               </ion-item>
               <ion-item>
-                <ion-input type="text" placeholder="Mobile no" name="mobile" [(ngModel)]="credentials.mobile" required></ion-input>
+                <ion-input type="text" placeholder="Mobile no" pattern="[0-9 || +]{10,13}" minlength="10" maxlength="10" name="mobile" [(ngModel)]="credentials.mobile" required></ion-input>
               </ion-item>
               <ion-item>
                 <ion-input type="text" placeholder="Username" name="username" [(ngModel)]="credentials.username" required></ion-input>
@@ -36,6 +36,7 @@
         <ion-row>
           <ion-col class="signup-col">
             <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Signup</button>
+            <button ion-button class="register-btn" block clear (click)="login()">Back To Login</button>
           </ion-col>
         </ion-row>
         

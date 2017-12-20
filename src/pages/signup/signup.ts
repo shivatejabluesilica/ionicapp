@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { signupUser } from '../../providers/auth-service'
 import { Http } from '@angular/http';
 import { LoginService } from '../../providers/login-service';
-import { ToastController} from 'ionic-angular';
+import { ToastController,NavController} from 'ionic-angular';
+import { PatientPage } from '../patient/patient';
 
 @Component({
     templateUrl:'signup.html'
@@ -19,7 +20,8 @@ export class SignupPage{
 
     credentials = new signupUser("","","","","","");
 
-    constructor(public http:Http, public loginService:LoginService,public toastCtrl:ToastController){}
+    constructor(public http:Http, public loginService:LoginService,
+        public toastCtrl:ToastController, public navCtrl:NavController){}
 
     private showToast(message: string) {
         let toast = this.toastCtrl.create({
@@ -30,15 +32,29 @@ export class SignupPage{
     }
 
     signup(credentials){
-        if(credentials.password===credentials.repassword){
-            this.loginService.signup(credentials).subscribe(data=>{
+        if(credentials.password!==""||credentials.password!==null||
+        credentials.password!==undefined&&credentials.password===credentials.repassword){
+            var login = {
+                username:credentials.username,
+                password:credentials.password,
+                profile:{
+                    name:credentials.name,
+                    mobile:credentials.mobile,
+                    email:credentials.email
+                }
+            }
+            this.loginService.signup(login).subscribe(data=>{
                 this.showToast(data.msg);
-                console.log(credentials);});
-                this.credentials = new signupUser("","","","","","");
+            });
+            this.credentials = new signupUser("","","","","","");
         }
         else{
             this.showToast("Confirm Password correctly.");
         }
+    }
+
+    login(){
+        this.navCtrl.setRoot(PatientPage);
     }
 
 }

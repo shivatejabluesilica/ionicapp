@@ -21,12 +21,19 @@ import { ProfilePage } from '../pages/profile-page/profile-page';
 import { FeedbackPage,ModalFeedbackPage } from '../pages/feedback/feedback';
 import { AppointmentPage } from '../pages/appointment/appointment';
 import { RecordsPage } from '../pages/records/records';
+import { DemoPage } from '../pages/demo/demo';
+import { DummyPage } from '../pages/dummy/dummy';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { File } from '@ionic-native/file';
+import { Transfer } from '@ionic-native/transfer';
+import { FilePath } from '@ionic-native/file-path';
+import { Camera } from '@ionic-native/camera';
 
 import { AuthService } from '../providers/auth-service';
 import { AppSettings } from '../providers/app-settings';
+import { TodoService } from '../providers/todo-service';
 import { LoginService } from '../providers/login-service';
 
 @NgModule({
@@ -49,7 +56,9 @@ import { LoginService } from '../providers/login-service';
     FeedbackPage,
     ModalFeedbackPage,
     AppointmentPage,
-    RecordsPage
+    RecordsPage,
+    DemoPage,
+    DummyPage
   ],
   imports: [
     BrowserModule,
@@ -78,13 +87,20 @@ import { LoginService } from '../providers/login-service';
     FeedbackPage,
     ModalFeedbackPage,
     AppointmentPage,
-    RecordsPage
+    RecordsPage,
+    DemoPage,
+    DummyPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    File,
+    Transfer,
+    Camera,
+    FilePath,
     AuthService,
     AppSettings,
+    TodoService,
     LoginService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
