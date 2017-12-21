@@ -9,9 +9,11 @@ mongoose = require('mongoose'),
 helmet = require('helmet'),
 config = require('./config.json');
 var shortid = require('shortid');
+multer = require('multer');
+export let UPLOAD_PATH = 'uploads'
 
 var app = express();
-app.use(helmet())
+app.use(helmet());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -30,6 +32,17 @@ mongoose.connect(config.database,{useMongoClient: true});
 //app.use(require('./todo-routes'));
 app.use(require('./login'));
 app.use(require('./signin'));
+app.use(require('./image'));
+
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, UPLOAD_PATH)
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.fieldname + '-' + Date.now())
+    }
+})
+export let upload = multer({ storage: storage })
 
 http.createServer(app).listen(port, function (err) {
 console.log('listening in http://localhost:' + port);
