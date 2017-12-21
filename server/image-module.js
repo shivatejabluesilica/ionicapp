@@ -8,4 +8,4 @@ var ImgSchema = new Schema({
         params : {fileName: String}
 });
 
-module.exports = mongoose.Model('Img',ImgSchema);
+module.exports = mongoose.model('Img',ImgSchema);

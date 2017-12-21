@@ -1,7 +1,18 @@
 var express = require('express');
 var app = express.Router();
-import { UPLOAD_PATH, upload } from './index';
+var multer = require('multer');
 var Image = require('./image-module');
+var UPLOAD_PATH = "uploads";
+
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, UPLOAD_PATH)
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.fieldname + '-' + Date.now())
+    }
+})
+upload = multer({ storage: storage });
 
 app.post('/upload', upload.single('image'),function(request, response) {
     let newImage = new Image();
