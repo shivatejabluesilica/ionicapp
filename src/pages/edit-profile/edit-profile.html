@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-row>
+            <ion-thumbnail>
+                <img src="{{profile.src}}" style="width:50px;height:50px;border-radius:50%;" />
+            </ion-thumbnail>
+            <ion-title >Edit Your Profile</ion-title>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-label floating>Father Name</ion-label>
+            <ion-input type="text" name="fathername" value="{{profile.fathername}}" [(ngModel)]="fathername"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Mother Name</ion-label>
+            <ion-input type="text" name="mothername" value="{{profile.mothername}}" [(ngModel)]="mothername"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Mobile Number</ion-label>
+            <ion-input type="tel" name="mobile" value="{{profile.mobileno}}" [(ngModel)]="mobileno"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Email Id</ion-label>
+            <ion-input type="email" name="email" value="{{profile.email}}" [(ngModel)]="email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Blood Group</ion-label>
+            <ion-select [(ngModel)] = "bloodgroup">
+                <ion-option *ngFor ="let bg of bgs" value="{{bg}}">{{bg}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>DOB</ion-label>
+            <ion-datetime displayFormat="MMM DD YYYY"  [(ngModel)]="dob"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Address</ion-label>
+            <ion-input type="text" name="address" value="{{profile.address}}" [(ngModel)]="address"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-buttons>
+                <button ion-button icon-left  (click)="save();">
+                    <ion-icon name="save"></ion-icon>Save
+                </button>
+            </ion-buttons>
+        </ion-item>
+    </ion-list>
+</ion-content>

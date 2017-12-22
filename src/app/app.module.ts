@@ -23,6 +23,7 @@ import { AppointmentPage } from '../pages/appointment/appointment';
 import { RecordsPage } from '../pages/records/records';
 import { DemoPage } from '../pages/demo/demo';
 import { DummyPage } from '../pages/dummy/dummy';
+import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -58,7 +59,8 @@ import { LoginService } from '../providers/login-service';
     AppointmentPage,
     RecordsPage,
     DemoPage,
-    DummyPage
+    DummyPage,
+    EditProfilePage
   ],
   imports: [
     BrowserModule,
@@ -89,7 +91,8 @@ import { LoginService } from '../providers/login-service';
     AppointmentPage,
     RecordsPage,
     DemoPage,
-    DummyPage
+    DummyPage,
+    EditProfilePage
   ],
   providers: [
     StatusBar,
