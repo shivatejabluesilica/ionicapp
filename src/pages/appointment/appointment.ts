@@ -119,13 +119,13 @@ export class AppointmentPage {
     }
 
     appointment(){
-        if(this.doctor===null||this.doctor===""||this.dt==null||this.dt==""||this.timing==null||this.timing==""){
-            this.msg ="failed";
+        if(this.doctor===null||this.doctor===""||this.doctor==undefined||this.dt==null||this.dt==""||this.timing==null||this.timing==""){
+            this.msg ="Failed";
         }
         else{
             let obj = { patid:this.obj.patientid,doc:this.doctor,dep:this.department,date:this.dt,time:this.timing};
             console.log(obj);
-            this.msg ="success";
+            this.msg ="Success";
             this.doctor = "";
             this.department ="";
             this.timing = "";
