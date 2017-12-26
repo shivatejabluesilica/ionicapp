@@ -107,6 +107,7 @@ export class DummyPage{
     if (img === null) {
       return '';
     } else {
+      this.presentToast(cordova.file.dataDirectory + img);
       return cordova.file.dataDirectory + img;
     }
   }
