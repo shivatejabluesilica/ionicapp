@@ -87,7 +87,6 @@ export class DummyPage{
   private copyFileToLocalDir(namePath, currentName, newFileName) {
     this.file.copyFile(namePath, currentName, cordova.file.dataDirectory, newFileName).then(success => {
       this.lastImage = newFileName;
-      this.presentToast(this.lastImage);
     }, error => {
       this.presentToast('Error while storing file.');
     });
@@ -106,7 +105,6 @@ export class DummyPage{
     if (img === null) {
       return '';
     } else {
-      this.presentToast(cordova.file.dataDirectory + img);
       return cordova.file.dataDirectory + img;
     }
   }
