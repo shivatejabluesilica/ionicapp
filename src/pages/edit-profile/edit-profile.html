@@ -5,7 +5,7 @@
         </button>
         <ion-row>
             <ion-thumbnail>
-                <img src="{{profile.src}}" style="width:50px;height:50px;border-radius:50%;" />
+                <img src="" style="width:50px;height:50px;border-radius:50%;" />
             </ion-thumbnail>
             <ion-title >Edit Your Profile</ion-title>
         </ion-row>
@@ -13,6 +13,10 @@
 </ion-header>
 <ion-content>
     <ion-list>
+        <ion-item>
+            <ion-label floating>Name</ion-label>
+            <ion-input type="text" name="name" value="{{profile.name}}" [(ngModel)]="name"></ion-input>
+        </ion-item>
         <ion-item>
             <ion-label floating>Father Name</ion-label>
             <ion-input type="text" name="fathername" value="{{profile.fathername}}" [(ngModel)]="fathername"></ion-input>
@@ -23,7 +27,7 @@
         </ion-item>
         <ion-item>
             <ion-label floating>Mobile Number</ion-label>
-            <ion-input type="tel" name="mobile" value="{{profile.mobileno}}" [(ngModel)]="mobileno"></ion-input>
+            <ion-input type="tel" name="mobile" value="{{profile.mobile}}" [(ngModel)]="mobileno"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label floating>Email Id</ion-label>
@@ -42,6 +46,10 @@
         <ion-item>
             <ion-label floating>Address</ion-label>
             <ion-input type="text" name="address" value="{{profile.address}}" [(ngModel)]="address"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Upload Your Profile</ion-label>
+            <ion-input type="file" name="file" (change) ="file($event)"></ion-input>
         </ion-item>
         <ion-item>
             <ion-buttons>

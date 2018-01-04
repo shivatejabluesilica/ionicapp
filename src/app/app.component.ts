@@ -12,7 +12,7 @@ import { FeedbackPage } from '../pages/feedback/feedback';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { DummyPage } from '../pages/dummy/dummy';
+import { DemoPage } from '../pages/demo/demo';
 
 
 @Component({
@@ -25,6 +25,7 @@ export class MyApp {
   pages: Array<{title: string, component: any}>;
   menus: Array<{title: string, component: any}>;
   profile;
+  data;
 
   constructor(
     public platform: Platform,
@@ -44,12 +45,12 @@ export class MyApp {
     this.pages = [
       { title: 'Profile', component: ProfilePage },
       { title: 'Feedback', component: FeedbackPage },
-      { title: 'dummy', component: DummyPage},
+      { title: 'demo', component: DemoPage },
       { title:'Logout', component: PatientPage }
     ];
-    this.events.subscribe('pro',(profile,profileNumber)=>{
-      this.profile = profile;
-    });
+    this.events.subscribe('Item',(item,itemNumber) => {
+      this.data = item;
+    })
   }
 
   initializeApp() {
@@ -61,7 +62,7 @@ export class MyApp {
 
   openPage(page) {
     this.menu.close();
-    this.nav.push(page.component,{profile:this.profile});
+    this.nav.push(page.component,{profile:this.data});
   }
 
   openMenu(men){

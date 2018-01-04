@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController, Platform, ViewController,Events } from 'ionic-angular';
+import { NavParams } from 'ionic-angular/navigation/nav-params';
+import { LoginService } from '../../providers/login-service';
 
 export class Ask{
     currentpatient:string;
@@ -12,14 +14,26 @@ export class Ask{
 })
 
 export class OnlineConsultationPage {
-    question:Array<any>=[];
 
-    constructor(public modalCtrl: ModalController,public events:Events) {
-        this.events.subscribe('shareObject',(item,itemNumber)=>{this.question.push(item);});
+    public question: Array<any> =[];
+    
+    constructor(public modalCtrl: ModalController,public events:Events, public navParams:NavParams,
+    public loginService:LoginService) {
+        this.question = navParams.data.onlineconsult;
+        this.events.subscribe('shareObject',(item,itemNumber)=>{
+            const sign = {
+                username: this.navParams.data.username,
+                password: this.navParams.data.password
+            }
+            this.loginService.login(sign).subscribe(data =>{
+                this.question = data[0].onlineconsult;
+            })
+        });
     }
 
     openModal() {
-        let modal = this.modalCtrl.create(ModalContentPage);
+        let id = this.navParams.data._id;
+        let modal = this.modalCtrl.create(ModalContentPage,{'id':id});
         modal.present();
     }
 }
@@ -30,12 +44,16 @@ export class OnlineConsultationPage {
 
 export class ModalContentPage {
 
-    currentpatient:string;
-    title:string;
-    detail:string;
-    msg:String;
+    currentpatient: string;
+    title: string;
+    detail: string;
+    msg: String;
+    id: String;
 
-    constructor(public viewCtrl: ViewController,public platform:Platform,public events:Events) {}
+    constructor(public viewCtrl: ViewController,public platform: Platform,
+        public events: Events, public loginService: LoginService, public navParams: NavParams) {
+            this.id = this.navParams.get('id');
+        }
     
     submit(){
         var date = new Date();
@@ -46,6 +64,9 @@ export class ModalContentPage {
         var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
         var time = hors + ":" + minutes + " " + am_pm;
         let item = {date:dt,time:time,currentpatient:this.currentpatient,title:this.title,detail:this.detail};
+        this.loginService.online(item,this.id).subscribe(res => {
+            console.log(res);
+        })
         this.events.publish("shareObject",item,5);
         this.msg = "Sent Successfully.";
     }

@@ -23,7 +23,7 @@ export class PatientPage {
     }
 
     public createAccount() {
-        this.nav.push(SignupPage);
+        this.nav.setRoot(SignupPage);
     }
         
     public login() {

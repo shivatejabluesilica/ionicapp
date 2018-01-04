@@ -8,9 +8,18 @@ var LoginSchema = new Schema({
     created_at:Date,
     profile:{
         name: {type:String,required:true},
-        email:{type:String,required:true},
-        mobile:{type:String,required:true}
-    }
+        email: {type:String,required:true},
+        mobile: {type:String,required:true},
+        bloodgroup: {type: String, required:true},
+        fathername: {type: String, required:true},
+        mothername: {type: String, required:true},
+        address: {type: String, required:true},
+        dob: {type: String, required:true}
+    },
+    onlineconsult:[],
+    medicalrecords:[],
+    feedbacks: [],
+    appointments: []
 });
  
 LoginSchema.pre('save', function (next) {

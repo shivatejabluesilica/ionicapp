@@ -15,12 +15,6 @@
         "address":"Chennai, Tamilanadu, India",
         "src":"assets/imgs/daya.png"
     },
-    "issues":{
-        "issue":"Fever"
-    },
-     "rcmdtions":{
-         "rcmdtion":"bloodtest"
-        },
     "healthdetails":{
         "bp":"120/80",
         "temp":"98.4 OF"
@@ -89,12 +83,6 @@
         "address":"Karimnagar, Telangana, India",
         "src":"assets/imgs/sri.jpg"
     },
-    "issues":{
-         "issue":"cold"
-        },
-        "rcmdtions":{
-            "rcmdtion":"x-ray"
-        },
     "healthdetails":{
         "bp":"120/80",
         "temp":"98.4 OF"

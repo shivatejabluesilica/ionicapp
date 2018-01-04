@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 const CONFIG = {
- apiUrl: 'http://127.0.0.1:3001/',
+ apiUrl: 'http://192.168.0.106:3001/',
 };
 
 @Injectable()
@@ -13,4 +13,5 @@ export class AppSettings {
  public getApiUrl() {
    return CONFIG.apiUrl;
  }
+ 
 }

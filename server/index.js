@@ -33,6 +33,7 @@ mongoose.connect(config.database,{useMongoClient: true});
 app.use(require('./login'));
 app.use(require('./signin'));
 app.use(require('./image'));
+app.use(require('./todo-routes'));
 
 http.createServer(app).listen(port, function (err) {
 console.log('listening in http://localhost:' + port);

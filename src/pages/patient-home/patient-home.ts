@@ -18,8 +18,6 @@ export class PatientHomePage {
         
         this.selectedItem = navParams.get('item');
         let item = this.selectedItem;
-        let profile = this.selectedItem.profile;
-        this.events.publish("pro",profile,11);
         this.events.publish("Item",item,10);
         menu.enable(true,'menu2');
         menu.enable(false,'menu1');
